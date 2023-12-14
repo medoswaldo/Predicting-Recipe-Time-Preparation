@@ -24,5 +24,10 @@ The chosen hyperparameters yielded a final RMSE of 647.2491544, showcasing an im
 
 
 ## Fairness Analysis
+I categorized recipes into two groups: Group X represents recipes with fewer ingredients than the mean, while Group Y comprises recipes with more ingredients than the mean. To assess the model's performance, I used the Root Mean Squared Error (RMSE) as the evaluation metric.
+
+In formulating hypotheses, my Null Hypothesis posits that the model is fair, implying that the RMSE for Group X and Group Y should be relatively similar. On the other hand, my Alternative Hypothesis suggests model unfairness, indicating that the RMSE for Group X would be higher than for Group Y.
+
+The test statistic employed is the difference in RMSE between Group X and Group Y, with a chosen significance level of 0.05. The resulting \(p\)-value of 0.03 is below the cutoff, leading to the rejection of the null hypothesis. This implies a significant difference in RMSE between recipes with fewer and more ingredients. It's important to note that while the statistical test provides evidence, absolute conclusions should be made with caution in the context of statistical analyses.
 
 
