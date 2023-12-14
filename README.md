@@ -12,6 +12,13 @@ The model I chose for my base model was a multiple-feature Decision Tree Ressess
 
 
 ## Final Model
+In the final model, I introduced the calories in the recipes as a new feature. This addition is grounded in the assumption that recipes with higher caloric content typically require more preparation time than those with lower caloric content. Therefore, incorporating this feature into the model allows for a more nuanced understanding of the underlying data-generating process, potentially leading to improved predictions. The hypothesis is that the caloric content of a recipe is a relevant factor influencing the time required for its preparation.
+
+I applied a `QuantileTransformer()` to the 'calories' feature to enhance the model's performance further. This transformation aims to mitigate the impact of skewed distributions in the calorie data. By making the distribution more symmetric, the QuantileTransformer helps the model better capture patterns and relationships within the data. This is particularly beneficial for ensuring that extreme values or outliers in the calorie distribution do not influence the prediction task.
+
+Additionally, I utilized `StandardScaler()` on the 'n_steps' and 'n_ingredients' features. This standardization addresses the potential variance in scales between these two features. Standardizing these features ensures that they contribute equally to the model training process, preventing one from dominating the learning algorithm due to its scale. It promotes a more balanced and effective learning process, contributing to the overall robustness of the model.
+
+For the modeling algorithm, I continued to use the Decision Tree Regressor, which proved effective in the baseline model. The hyperparameters that demonstrated optimal performance were determined through a systematic search using the `GridSearchCV` method. Specifically, the hyperparameters tuned included the tree depth and other relevant parameters affecting the tree's structure. The choice of hyperparameters was guided by the need to balance model complexity and performance.
 
 
 ## Fairness Analysis
