@@ -1,5 +1,5 @@
 # Predicting Recipe Time Preparation
-My exploratory data analysis on this dataset can be found here 	[Oswalod EDA](https://medoswaldo.github.io/recipes_and_ratings_exploratory_analysis/)
+My exploratory data analysis on this dataset can be found here 	[oswalod's EDA](https://medoswaldo.github.io/recipes_and_ratings_exploratory_analysis/)
 
 By Oswaldo Medina Jr (omedinajr@ucsd.edu)
 
@@ -8,6 +8,7 @@ The chosen prediction problem involves forecasting the number of minutes require
 
 
 ## Baseline Model
+The model I chose for my base model was a multiple-feature Decision Tree Ressessor made to precut the minutes in the original recipes dataset. The model followed the criteria of using at least two feature columns that must be transformed. I have four features: ‘n_steps’, ‘n_ingredients’, ‘more_cal_than”avg’, and ‘more_steps_than_avg’. I assumed these features were best for the base since all of their components are very straight and detailed towards knowing the process of difficulty of the recipes, and, in turn, the difficulty could be repeated with the time the recipes would take. The ‘n_ingredients’ and ‘n_steps’ are quantitative variables representing the solid amount of steps or ingredients in each recipe. In the dataset, we have added two categorical nominal variables ‘more_cal_than”avg’, and ‘more_steps_than_avg’, which caused us to OneHotEncoded these columns to ger quantitative variables that we could perform other functions on. The pipeline had a Decision Tree Regressor model that is kept in its default parameter since I didn’t believe any real action we required for the model. 
 
 
 ## Final Model
