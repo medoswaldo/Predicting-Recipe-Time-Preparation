@@ -12,13 +12,15 @@ The model I chose for my base model was a multiple-feature Decision Tree Ressess
 
 
 ## Final Model
-In the final model, I introduced the calories in the recipes as a new feature. This addition is grounded in the assumption that recipes with higher caloric content typically require more preparation time than those with lower caloric content. Therefore, incorporating this feature into the model allows for a more nuanced understanding of the underlying data-generating process, potentially leading to improved predictions. The hypothesis is that the caloric content of a recipe is a relevant factor influencing the time required for its preparation.
+In enhancing the final model, I introduced the 'calories' feature under the premise that recipes with higher caloric content often demand more preparation time. This addition aims to capture nuanced correlations within the data, offering a more sophisticated understanding of the underlying data-generating process. The hypothesis is that caloric content significantly influences recipe preparation time.
 
-I applied a `QuantileTransformer()` to the 'calories' feature to enhance the model's performance further. This transformation aims to mitigate the impact of skewed distributions in the calorie data. By making the distribution more symmetric, the QuantileTransformer helps the model better capture patterns and relationships within the data. This is particularly beneficial for ensuring that extreme values or outliers in the calorie distribution do not influence the prediction task.
+To refine the model further, I applied a `QuantileTransformer()` to the 'calories' feature. This transformation mitigates skewed distributions, promoting a symmetric distribution that aids the model in grasping patterns and relationships within the data. It's especially valuable for preventing extreme values in the calorie distribution from unduly impacting the prediction task.
 
-Additionally, I utilized `StandardScaler()` on the 'n_steps' and 'n_ingredients' features. This standardization addresses the potential variance in scales between these two features. Standardizing these features ensures that they contribute equally to the model training process, preventing one from dominating the learning algorithm due to its scale. It promotes a more balanced and effective learning process, contributing to the overall robustness of the model.
+Additionally, I employed `StandardScaler()` on the 'n_steps' and 'n_ingredients' features to address potential scale variations. This standardization ensures equal contributions from these features during the training process, preventing any one feature from dominating the learning algorithm due to scale differences. The aim is to foster a more balanced and robust learning process.
 
-For the modeling algorithm, I continued to use the Decision Tree Regressor, which proved effective in the baseline model. The hyperparameters that demonstrated optimal performance were determined through a systematic search using the `GridSearchCV` method. Specifically, the hyperparameters tuned included the tree depth and other relevant parameters affecting the tree's structure. The choice of hyperparameters was guided by the need to balance model complexity and performance.
+The modeling algorithm retained the Decision Tree Regressor, which demonstrated effectiveness in the baseline model. Hyperparameter tuning involved systematically searching through a parameter grid, specifically focusing on 'max_depth,' 'min_samples_split,' and 'min_samples_leaf.' This process, facilitated by `GridSearchCV`, aimed to find the optimal balance between model complexity and performance.
+
+The chosen hyperparameters yielded a final RMSE of 647.2491544, showcasing an improvement over the baseline model and affirming the effectiveness of the introduced features and model refinements.
 
 
 ## Fairness Analysis
